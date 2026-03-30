@@ -1,7 +1,6 @@
 { pkgs, config, lib, ... }:
 {
   programs.home-manager.enable = true;
-  # test2
 
   imports = [
     ./hypr
