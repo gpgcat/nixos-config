@@ -13,6 +13,7 @@
 
     exec-once = [
       "hyprctl dispatch workspace 1"
+      "QML_DISABLE_DISK_CACHE=1 quickshell"
     ];
 
     general = {
@@ -74,10 +75,10 @@
     "$scripts" = "~/nix/home/hypr/scripts";
 
     bind = [
-      "$mod, Q, exec, alacritty"
+      "$mod, Q, exec, ghostty"
       "$mod, C, killactive,"
       "$mod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
-      "$mod, E, exec, alacritty -e yazi"
+      "$mod, E, exec, ghostty -e yazi"
       "$mod, V, togglefloating,"
       "$mod, R, exec, qs ipc call launcher toggle"
       "$mod, P, pseudo," # dwindle

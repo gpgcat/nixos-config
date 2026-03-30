@@ -26,6 +26,9 @@
   ];
 
   programs = {
+    ghostty.enable = true;
+    yazi.enable = true;
+    alacritty.enable = true;
     vesktop.enable = true;
     spotify-player.enable = true;
   };

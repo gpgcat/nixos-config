@@ -48,10 +48,6 @@
     netcat-gnu
   ];
 
-  systemd.user = {
-    startServices = "suggest";
-  };
-
   programs.fzf.enable = true;
   programs.fish.enable = true;
 
@@ -60,7 +56,6 @@
   '';
 
   programs.alacritty = {
-    enable = true;
     settings = {
       terminal.shell = "fish";
       font = lib.mkForce {
@@ -73,6 +68,18 @@
         x = 5;
 	y = 5;
       };
+    };
+  };
+
+  programs.ghostty = {
+    enableFishIntegration = true;
+    settings = {
+      font-family = lib.mkForce "Unifont";
+      font-size = 12;
+      freetype-load-flags = "monochrome";
+      window-padding-x = 5;
+      window-padding-y = 5;
+      command = "fish";
     };
   };
 
@@ -121,29 +128,6 @@
     property color slider: "#${config.lib.stylix.colors.base03}"
     property color text: "#${config.lib.stylix.colors.base05}"
   }
-  '';
-
-  systemd.user.services.quickshell = {
-    Unit = {
-      Description = "Quickshell";
-      After = [ "graphical-session.target" ];
-      PartOf = [ "graphical-session.target" ];
-    };
-    Service = {
-      ExecStart = "${pkgs.quickshell}/bin/quickshell";
-      Restart = "on-failure";
-      RestartSec = 3;
-      Environment = [
-        "QML_DISABLE_DISK_CACHE=1"
-      ];
-    };
-    Install = {
-      WantedBy = [ "graphical-session.target" ];
-    };
-  };
-
-  home.activation.restartQuickshell = lib.hm.dag.entryAfter ["reloadSystemd"] ''
-    ${pkgs.systemd}/bin/systemctl --user restart quickshell.service || true
   '';
 
   home.stateVersion = "26.05";
