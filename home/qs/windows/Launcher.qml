@@ -76,6 +76,7 @@ FloatingWindow {
       width: parent.width
       height: 40
       placeholderText: "search apps..."
+      placeholderTextColor: colors.slider
       font.family: "Cozette"
       focus: true
       font.styleName: "HiDpi"
