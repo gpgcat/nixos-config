@@ -22,6 +22,7 @@
     mpv
     swayimg
     hyprshot
+    cinny-desktop
   ];
 
   programs = {
