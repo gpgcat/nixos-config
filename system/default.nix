@@ -98,6 +98,9 @@
       neovim
       gnupg
       pinentry-curses
+      zip
+      unzip
+      p7zip
     ]
     ++ (with hunspellDicts; [
       en_US
