@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     # cli
     gdu
+    opencode
     tree
     onefetch
     cava
