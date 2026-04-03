@@ -77,20 +77,20 @@
     bind = [
       "$mod, Q, exec, ghostty"
       "$mod, C, killactive,"
-      "$mod, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
+      "$mod SHIFT, M, exec, command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
       "$mod, E, exec, ghostty -e yazi"
       "$mod, V, togglefloating,"
       "$mod, R, exec, qs ipc call launcher toggle"
-      "$mod, P, pseudo," # dwindle
-      "$mod, J, layoutmsg, togglesplit" # dwindle
+      "$mod, P, exec, ghostty -e spotify_player"
+      "$mod, J, layoutmsg, togglesplit"
       "$mod, N, exec, qs ipc call nc toggle"
       "$mod, Z, exec, fish $scripts/zoom.fish"
       ", Print, exec, hyprshot -m region -z --clipboard-only"
 
-      "$mod, left, movefocus, l"
-      "$mod, right, movefocus, r"
-      "$mod, up, movefocus, u"
-      "$mod, down, movefocus, d"
+      "$mod, H, movefocus, l"
+      "$mod, J, movefocus, r"
+      "$mod, K, movefocus, u"
+      "$mod, L, movefocus, d"
 
       "$mod, 1, workspace, 1"
       "$mod, 2, workspace, 2"

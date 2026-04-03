@@ -59,6 +59,8 @@
           format.type = [ "nixfmt" ];
         };
 
+        ts.enable = true;
+        astro.enable = true;
         clang.enable = true;
         qml.enable = true;
         go.enable = true;
