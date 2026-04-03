@@ -82,7 +82,7 @@
       "$mod, V, togglefloating,"
       "$mod, R, exec, qs ipc call launcher toggle"
       "$mod, P, exec, ghostty -e spotify_player"
-      "$mod, J, layoutmsg, togglesplit"
+      "$mod, W, layoutmsg, togglesplit"
       "$mod, N, exec, qs ipc call nc toggle"
       "$mod, Z, exec, fish $scripts/zoom.fish"
       ", Print, exec, hyprshot -m region -z --clipboard-only"
