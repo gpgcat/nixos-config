@@ -18,6 +18,13 @@
         showmode = false;
       };
 
+      maps.normal = {
+        "<leader>hm" = {
+          action = "<cmd>lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())<cr>";
+          desc = "Harpoon menu";
+        };
+      };
+
       lsp = {
         enable = true;
         # A really bad idea for C projects
@@ -95,6 +102,8 @@
 
       treesitter.context.enable = true;
 
+      navigation.harpoon.enable = true;
+
       binds = {
         whichKey.enable = true;
         cheatsheet.enable = true;
@@ -106,6 +115,10 @@
         # Throws an annoying debug message
         gitsigns.codeActions.enable = false;
       };
+
+      telescope.enable = true;
+
+      
 
       notify.nvim-notify.enable = true;
 
