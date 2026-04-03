@@ -16,6 +16,7 @@
 
     # gui
     krita
+    remmina
     quickshell
     ayugram-desktop
     obs-studio
