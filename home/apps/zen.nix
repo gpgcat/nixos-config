@@ -13,8 +13,50 @@
 
       search = {
         force = true;
-        default = "ddg";
+        default = "kagi";
+        privateDefault = "duckduckgo";
+        order = [
+          "kagi"
+          "google"
+          "duckduckgo"
+        ];
         engines = {
+          kagi = {
+            urls = [
+              {
+                template = "https://kagi.com/search";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+              {
+                # Suggestions URL
+                type = "application/x-suggestions+json";
+                template = "https://kagi.com/api/autosuggest";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+
+            name = "Kagi";
+            icon = "https://kagi.com/favicon.ico";
+            definedAliases = [
+              "@kagi"
+              "@k"
+            ];
+          };
+
+          google = {
+            # Builtin engines only support specifying one additional alias
+            metaData.alias = "@g";
+          };
           nix-packages = {
             urls = [
               {
