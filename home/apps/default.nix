@@ -7,6 +7,7 @@
     # cli
     gdu
     opencode
+    codex
     tree
     onefetch
     cava
