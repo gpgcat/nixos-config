@@ -35,6 +35,7 @@
     gnumake
     cargo
     rustc
+    go
     (python3.withPackages (
       ps: with ps; [
         ipython
