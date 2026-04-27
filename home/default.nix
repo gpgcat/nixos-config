@@ -19,6 +19,19 @@
     };
   };
 
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = false;
+    desktop = "${config.home.homeDirectory}/desktop";
+    download = "${config.home.homeDirectory}/downloads";
+    documents = "${config.home.homeDirectory}/documents";
+    videos = "${config.home.homeDirectory}/videos";
+    music = "${config.home.homeDirectory}/music";
+    pictures = "${config.home.homeDirectory}/pictures";
+    publicShare = "${config.home.homeDirectory}/public";
+    templates = "${config.home.homeDirectory}/templates";
+  };
+
   wayland.windowManager.hyprland.settings.env = [
     "EDITOR,hx"
     "VISUAL,hx"
