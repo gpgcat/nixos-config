@@ -3,6 +3,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./disko.nix
     ];
 
   services.xserver.videoDrivers = [ "modesetting" ];
