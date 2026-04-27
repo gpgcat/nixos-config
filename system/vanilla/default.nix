@@ -24,6 +24,7 @@
 
   services = {
     libinput.enable = true;
+    power-profiles-daemon.enable = true;
     upower.enable = true;
     "06cb-009a-fingerprint-sensor" = {
       enable = true;

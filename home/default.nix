@@ -29,6 +29,8 @@
 
   home.packages = with pkgs; [
     ayugram-desktop
+    telegram-desktop
+    vesktop
     gnupg
   ];
 
@@ -50,6 +52,7 @@
         typescript-language-server
         nixd
         gopls
+        typst
         basedpyright
       ];
       settings = {
