@@ -37,10 +37,6 @@
                       mountpoint = "/nix";
                       mountOptions = [ "compress=zstd" "noatime" ];
                     };
-                    "@swap" = {
-                      mountpoint = "/swap";
-                      swap.swapfile.size = "8G";
-                    };
                     "@snapshots" = {
                       mountpoint = "/.snapshots";
                       mountOptions = [ "compress=zstd" "noatime" ];

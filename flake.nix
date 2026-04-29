@@ -91,7 +91,14 @@
         in
         {
           "madeline" = makeHomeConfiguration [ ];
-          "madeline@azuki" = makeHomeConfiguration [ ];
+          "madeline@azuki" = makeHomeConfiguration [
+            ({ ... }: {
+              wayland.windowManager.hyprland.settings.monitor = [
+                "DP-3, 3440x1440@180, 0x1080, 1"
+                "HDMI-A-1, 1920x1080@143.98, 760x0, 1"
+              ];
+            })
+          ];
           "madeline@vanilla" = makeHomeConfiguration [ ];
         };
   };
