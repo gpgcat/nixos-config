@@ -44,7 +44,7 @@
     ayugram-desktop
     telegram-desktop
     vesktop
-    gpu-screen-recorder
+    wf-recorder
   ];
 
   home.stateVersion = "26.05";
