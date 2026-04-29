@@ -61,6 +61,12 @@
         in
         {
           fallback = makeNixosConfiguration "fallback" [ ];
+          azuki = makeNixosConfiguration "azuki" [
+            ./system/azuki
+
+            lanzaboote.nixosModules.lanzaboote
+            disko.nixosModules.disko
+          ];
           vanilla = makeNixosConfiguration "vanilla" [
             ./system/vanilla
 
@@ -85,6 +91,7 @@
         in
         {
           "madeline" = makeHomeConfiguration [ ];
+          "madeline@azuki" = makeHomeConfiguration [ ];
           "madeline@vanilla" = makeHomeConfiguration [ ];
         };
   };

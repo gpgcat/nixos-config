@@ -45,6 +45,7 @@
     telegram-desktop
     vesktop
     gnupg
+    gpu-screen-recorder
   ];
 
   home.stateVersion = "26.05";
