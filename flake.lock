@@ -227,8 +227,7 @@
         "disko": "disko",
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
-        "nixpkgs": "nixpkgs",
-        "t480-fingerprint": "t480-fingerprint"
+        "nixpkgs": "nixpkgs"
       }
     },
     "rust-overlay": {
@@ -249,26 +248,6 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "t480-fingerprint": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1752265282,
-        "narHash": "sha256-eipl7Niq9Xurtr+W75LJNdl9A3z3+RmXBWx1n8/l5G4=",
-        "owner": "viktor-grunwaldt",
-        "repo": "t480-fingerprint-nixos",
-        "rev": "1ef501415c23782b9f8de050d3b45d1d480da8bd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "viktor-grunwaldt",
-        "repo": "t480-fingerprint-nixos",
         "type": "github"
       }
     }

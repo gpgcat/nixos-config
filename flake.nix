@@ -19,11 +19,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    t480-fingerprint = {
-      url = "github:viktor-grunwaldt/t480-fingerprint-nixos";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -72,7 +67,6 @@
 
             lanzaboote.nixosModules.lanzaboote
             disko.nixosModules.disko
-            inputs.t480-fingerprint.nixosModules."06cb-009a-fingerprint-sensor"
           ];
         };
       homeConfigurations =
@@ -99,7 +93,13 @@
               ];
             })
           ];
-          "madeline@vanilla" = makeHomeConfiguration [ ];
+          "madeline@vanilla" = makeHomeConfiguration [
+            ({ ... }: {
+              wayland.windowManager.hyprland.settings.monitor = [
+                "eDP-1, 1920x1080, 0x0, 1"
+              ];
+            })
+          ];
         };
   };
 }
