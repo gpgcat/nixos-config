@@ -1,4 +1,4 @@
-{ pkgs, config, lib, inputs, ... }:
+{ pkgs, config, lib, ... }:
 {
   imports = [
     ./hypr
@@ -44,7 +44,6 @@
     ayugram-desktop
     telegram-desktop
     vesktop
-    gnupg
     gpu-screen-recorder
   ];
 
@@ -89,12 +88,19 @@
         font_size = 14;
       };
     };
+    gpg = {
+      enable = true;
+      homedir = "${config.home.homeDirectory}/.gnupg";
+    };
     git = {
       enable = true;
       settings = {
         user.name = "gpgcat";
         user.email = "gpgcat@proton.me";
         init.defaultBranch = "main";
+        user.signingKey = "25380268D6110BA6";
+        commit.gpgSign = true;
+        tag.gpgSign = true;
       };
 
       includes = [
