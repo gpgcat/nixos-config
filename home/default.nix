@@ -6,6 +6,7 @@
   ];
 
   programs.home-manager.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   home = {
     username = "madeline";
@@ -44,6 +45,7 @@
     ayugram-desktop
     telegram-desktop
     vesktop
+    spotify
     wf-recorder
   ];
 
