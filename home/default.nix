@@ -45,7 +45,7 @@
     ayugram-desktop
     telegram-desktop
     vesktop
-    spotify
+    spotify-player
     wf-recorder
   ];
 
@@ -117,6 +117,10 @@
           path = "~/.config/git/work.include";
         }
       ];
+    };
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
     };
   };
 }
