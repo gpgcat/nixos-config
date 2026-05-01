@@ -58,6 +58,12 @@
 
   programs = {
     yazi.enable = true;
+    fish = {
+      enable = true;
+      interactiveShellInit = ''
+        set -x GPG_TTY (tty)
+      '';
+    };
     helix = {
       enable = true;
       extraPackages = with pkgs; [
