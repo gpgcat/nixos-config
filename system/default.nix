@@ -79,23 +79,6 @@
     polkit.enable = true;
     sudo.enable = true;
     rtkit.enable = true;
-
-    pam.services =
-      let
-        lidCheck = pkgs.writeShellScript "pam-lid-check" ''
-          ${pkgs.gnugrep}/bin/grep -q open /proc/acpi/button/lid/*/state
-        '';
-        fprintdLidCheck = {
-          order = 11399;
-          control = "[success=ignore default=1]";
-          modulePath = "${pkgs.linux-pam}/lib/security/pam_exec.so";
-          args = [ "quiet" "$(lidCheck)" ];
-        };
-      in
-      lib.mkIf config.services.fprintd.enable {
-        sudo.rules.auth.fprintd-lid-check = fprintdLidCheck;
-        polkit-1.rules.auth.fprintd-lid-check = fprintdLidCheck;
-      };
   };
 
   programs = {
