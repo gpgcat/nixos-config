@@ -3,6 +3,8 @@
   imports = [
     ./hypr
     ./librewolf
+    
+    ./packages.nix
   ];
 
   programs.home-manager.enable = true;
@@ -41,14 +43,6 @@
     "HYPRCURSOR_SZIE,24"
   ];
 
-  home.packages = with pkgs; [
-    ayugram-desktop
-    telegram-desktop
-    vesktop
-
-    wf-recorder
-  ];
-
   home.stateVersion = "26.05";
 
   services = {
@@ -65,6 +59,13 @@
       interactiveShellInit = ''
         set -x GPG_TTY (tty)
       '';
+      shellAliases = {
+        nixos-switch = "sudo nixos-rebuild switch --flake ~/nix";
+        home-switch = "home-manager switch --flake ~/nix";
+        ls = "eza";
+        ll = "eza -la";
+        cat = "bat";
+      };
     };
     helix = {
       enable = true;
