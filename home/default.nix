@@ -45,7 +45,7 @@
     ayugram-desktop
     telegram-desktop
     vesktop
-    spotify-player
+
     wf-recorder
   ];
 
