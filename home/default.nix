@@ -80,6 +80,7 @@
         ls = "eza";
         ll = "eza -la";
         cat = "bat";
+        open = "xdg-open";
       };
     };
     helix = {
