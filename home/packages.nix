@@ -11,6 +11,7 @@
     spotify
     mpv
     swayimg
+    zathura
 
     # cli tools
     ffmpeg

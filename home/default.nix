@@ -22,17 +22,32 @@
     };
   };
 
-  xdg.userDirs = {
-    enable = true;
-    createDirectories = false;
-    desktop = "${config.home.homeDirectory}/desktop";
-    download = "${config.home.homeDirectory}/downloads";
-    documents = "${config.home.homeDirectory}/documents";
-    videos = "${config.home.homeDirectory}/videos";
-    music = "${config.home.homeDirectory}/music";
-    pictures = "${config.home.homeDirectory}/pictures";
-    publicShare = "${config.home.homeDirectory}/public";
-    templates = "${config.home.homeDirectory}/templates";
+  xdg = {
+    userDirs = {
+      enable = true;
+      createDirectories = false;
+      desktop = "${config.home.homeDirectory}/desktop";
+      download = "${config.home.homeDirectory}/downloads";
+      documents = "${config.home.homeDirectory}/documents";
+      videos = "${config.home.homeDirectory}/videos";
+      music = "${config.home.homeDirectory}/music";
+      pictures = "${config.home.homeDirectory}/pictures";
+      publicShare = "${config.home.homeDirectory}/public";
+      templates = "${config.home.homeDirectory}/templates";
+    };
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "video/mp4" = "mpv.desktop";
+        "video/mkv" = "mpv.desktop";
+        "video/webm" = "mpv.desktop";
+        "application/pdf" = "org.pwmt.zathura.desktop";
+        "image/png" = "swayimg.desktop";
+        "image/jpeg" = "swayimg.desktop";
+        "image/gif" = "swayimg.desktop";
+        "image/webp" = "swayimg.desktop";
+      };
+    };
   };
 
   wayland.windowManager.hyprland.settings.env = [
