@@ -12,6 +12,7 @@
     mpv
     swayimg
     zathura
+    prismlauncher
 
     # cli tools
     ffmpeg
