@@ -68,6 +68,7 @@
     dbus.enable = true;
     fwupd.enable = true;
     mullvad-vpn.enable = true;
+    flatpak.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
