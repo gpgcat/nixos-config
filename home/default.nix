@@ -92,6 +92,7 @@
         gopls
         typst
         basedpyright
+        astro-language-server
       ];
       settings = {
         theme = "merionette";
