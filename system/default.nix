@@ -53,6 +53,7 @@
     neovim
     wget
     curl
+    gcc
   ];
 
   fonts.packages = with pkgs; [
