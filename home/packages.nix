@@ -39,5 +39,11 @@
     slurp
     wf-recorder
     wl-clipboard
+
+    # rust stuff (rust-analyzer installed in helix extraPackages)
+    rustc
+    cargo
+    rustfmt
+    clippy
   ];
 }
