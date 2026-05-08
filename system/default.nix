@@ -70,6 +70,12 @@
     fwupd.enable = true;
     mullvad-vpn.enable = true;
     flatpak.enable = true;
+    udev = {
+      enable = true;
+      packages = [
+        pkgs.qmk-udev-rules
+      ];
+    };
     pipewire = {
       enable = true;
       alsa.enable = true;

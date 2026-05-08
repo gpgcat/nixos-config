@@ -40,6 +40,12 @@
     wf-recorder
     wl-clipboard
 
+    # qmk stuff
+    qmk
+    avrdude
+    dfu-programmer
+    teensy-loader-cli
+
     # rust stuff (rust-analyzer installed in helix extraPackages)
     rustc
     cargo
