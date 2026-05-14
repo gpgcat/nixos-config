@@ -62,6 +62,13 @@
     adwaita-fonts
   ];
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+    ];
+  };
+  
   hardware.graphics.enable = true;
 
   services = {
