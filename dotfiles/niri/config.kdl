@@ -106,8 +106,8 @@ binds {
 
     Mod+Shift+H { focus-column-first; }
     Mod+Shift+L { focus-column-last; }
-    Mod+Ctrl+H  { move-column-to-first; }
-    Mod+Ctrl+L  { move-column-to-last; }
+    Mod+Shift+Ctrl+H  { move-column-to-first; }
+    Mod+Shift+Ctrl+L  { move-column-to-last; }
 
     Mod+Shift+J     { focus-monitor-down; }
     Mod+Shift+K     { focus-monitor-up; }
