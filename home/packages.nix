@@ -6,5 +6,7 @@
 
     yazi
     fzf
+
+    nerd-fonts.jetbrains-mono
   ];
 }
