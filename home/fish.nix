@@ -6,7 +6,10 @@
       set fish_greeting
     '';
     plugins = [
-      { name = "fzf"; src = pkgs.fishPlugins.fzf.src; }
+      {
+        name = "fzf";
+        src = pkgs.fishPlugins.fzf.src;
+      }
     ];
   };
 }

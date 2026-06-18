@@ -1,4 +1,9 @@
-{ config, lib, flakeRoot, ... }:
+{
+  config,
+  lib,
+  flakeRoot,
+  ...
+}:
 let
   dotfilesPath = "${flakeRoot}/dotfiles";
   dotfilesDir = builtins.readDir ../dotfiles;
