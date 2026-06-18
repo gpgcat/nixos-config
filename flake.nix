@@ -1,105 +1,73 @@
 {
-  description = "madeline's nixos config";
-
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    import-tree.url = "github:denful/import-tree";
+
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs =
     {
+      self,
       nixpkgs,
+      nur,
       home-manager,
-      lanzaboote,
-      disko,
-      caelestia-shell,
       ...
     }@inputs:
-    {
-      nixosConfigurations =
-        let
-          makeNixosConfiguration =
-            name: modules:
-            nixpkgs.lib.nixosSystem {
-              system = "x86_64-linux";
-              specialArgs = { inherit inputs; };
-              modules = [
-                (
-                  { ... }:
-                  {
-                    networking.hostName = name;
-                  }
-                )
+      let
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+	  config.allowUnfree = true;
+          overlays = [
+            inputs.nur.overlays.default
+	    (import ./packages)
+	  ];
+	};
 
-                ./system
-              ] ++ modules;
-            };
-        in
-        {
-          fallback = makeNixosConfiguration "fallback" [ ];
-          azuki = makeNixosConfiguration "azuki" [
-            ./system/azuki
+        inherit (nixpkgs) lib;
 
-            lanzaboote.nixosModules.lanzaboote
-            disko.nixosModules.disko
-          ];
-          vanilla = makeNixosConfiguration "vanilla" [
-            ./system/vanilla
+	commonModules = if builtins.pathExists ./hosts/common
+	  then builtins.filter (path: lib.hasSuffix ".nix" path) (lib.fileset.toList ./hosts/common)
+	  else [];
 
-            lanzaboote.nixosModules.lanzaboote
-            disko.nixosModules.disko
-          ];
-        };
-      homeConfigurations =
-        let
-          makeHomeConfiguration =
-            modules:
-            home-manager.lib.homeManagerConfiguration {
-              pkgs = nixpkgs.legacyPackages.x86_64-linux;
-              extraSpecialArgs = { inherit inputs; };
-              modules = [
-                ./home
+        makeNixosConfiguration = hostname: let
+	  hostModules = builtins.filter (path: lib.hasSuffix ".nix" path)
+	    (lib.fileset.toList (./hosts + "/${hostname}"));
+	in
+	  nixpkgs.lib.nixosSystem {
+	    inherit pkgs;
+            specialArgs = { inherit inputs; };
+            modules = hostModules ++ commonModules;
+          };
+	
+	hostDirs = nixpkgs.lib.filterAttrs (name: type: type == "directory" && name != "common")
+	  (builtins.readDir ./hosts);
+      in
+      {
+        nixosConfigurations =
+	  nixpkgs.lib.mapAttrs' (hostname: _: {
+            name = hostname;
+	    value = makeNixosConfiguration hostname;
+	  }) hostDirs;
 
-                caelestia-shell.homeManagerModules.default
-              ] ++ modules;
-            };
-        in
-        {
-          "madeline" = makeHomeConfiguration [ ];
-          "madeline@azuki" = makeHomeConfiguration [
-            ({ ... }: {
-              wayland.windowManager.hyprland.settings.monitor = [
-                "DP-3, 3440x1440@180, 0x1080, 1"
-                "HDMI-A-1, 1920x1080@143.98, 760x0, 1"
-              ];
-            })
-          ];
-          "madeline@vanilla" = makeHomeConfiguration [
-            ({ ... }: {
-              wayland.windowManager.hyprland.settings.monitor = [
-                "eDP-1, 1920x1080, 0x0, 1"
-              ];
-            })
-          ];
-        };
-  };
+	homeConfigurations.madeline = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+	  extraSpecialArgs = {
+	    inherit inputs;
+	    flakeRoot = ./.;
+	  };
+	  modules = [
+            (inputs.import-tree ./home)
+	  ];
+	};
+      };
 }
+

@@ -1,55 +1,10 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # communication
     ayugram-desktop
-    telegram-desktop
-    vesktop
-    signal-desktop
+    helium-wayland
 
-    # gui apps
-    spotify
-    mpv
-    swayimg
-    zathura
-    prismlauncher
-
-    # cli tools
-    ffmpeg
-    htop
-    btop
-    bat
-    eza
-    psmisc
-    ripgrep
-    bubblewrap
-    rbw
-    file
+    yazi
     fzf
-    jq
-    yq
-    tokei
-    ncdu
-    p7zip
-    unzip
-    zip
-    socat
-    tcpdump
-    nmap
-    slurp
-    wf-recorder
-    wl-clipboard
-
-    # qmk stuff
-    qmk
-    avrdude
-    dfu-programmer
-    teensy-loader-cli
-
-    # rust stuff (rust-analyzer installed in helix extraPackages)
-    rustc
-    cargo
-    rustfmt
-    clippy
   ];
 }
