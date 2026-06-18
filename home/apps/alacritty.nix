@@ -6,13 +6,13 @@
     settings = {
       window = {
         padding = {
-	  x = 10;
-	  y = 10;
-	};
-	decorations = "None";
-	opacity = 0.9;
-	blur = true;
+          x = 10;
+          y = 10;
+        };
+        decorations = "None";
       };
+      font.normal.family = "JetBrainsMono Nerd Font";
+      font.size = 14;
     };
   };
 }
