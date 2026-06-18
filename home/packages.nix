@@ -6,6 +6,7 @@
 
     yazi
     fzf
+    wl-clipboard
 
     nerd-fonts.jetbrains-mono
   ];
