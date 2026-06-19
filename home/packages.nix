@@ -6,8 +6,11 @@
     helium-wayland
     waybar
     wlr-which-key
+    obs-studio
 
     yazi
+    gpu-screen-recorder
+    wf-recorder
     awww
     fzf
     pipemixer
