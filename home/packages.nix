@@ -5,6 +5,7 @@
     vesktop-wayland
     helium-wayland
     waybar
+    wlr-which-key
 
     yazi
     awww
