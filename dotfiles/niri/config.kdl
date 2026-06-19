@@ -14,6 +14,7 @@ output "DP-3" {
     scale 1
     position x=0 y=1080
     focus-at-startup
+    backdrop-color "#101010"
 
     hot-corners {
         off
@@ -24,6 +25,7 @@ output "HDMI-A-1" {
     mode "1920x1080@143.981"
     scale 1
     position x=760 y=0
+    backdrop-color "#101010"
 
     hot-corners {
         off
