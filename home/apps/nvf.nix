@@ -126,8 +126,8 @@
           };
 
           postInstall = ''
-            	    rm $out/init.lua
-            	  ''; # breaks flake build
+            rm $out/init.lua
+          ''; # breaks flake build
         })
         vim-nix
       ];

@@ -1,0 +1,80 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+}
+
+/* strip default gtk and waybar minimum heights */
+window#waybar,
+button,
+label {
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background-color: #aca1cf;
+    color: #a0a0a0;
+}
+
+.modules-left {
+    background-color: #101010;
+    padding: 0;
+}
+
+.modules-right {
+    background-color: #101010;
+    padding: 0 5px 0 0;
+}
+
+#workspaces {
+    background-color: #101010;
+}
+
+#workspaces button {
+    padding: 0 11px;
+    min-width: 1px;
+    color: #a0a0a0; /* normal white / muted gray */
+    border-radius: 0;
+    background-color: transparent;
+}
+
+/* focused workspace uses vesper blue/purple accent */
+#workspaces button.focused {
+    padding: 0 11px;
+    background-color: #aca1cf;
+    color: #101010;
+}
+
+/* active window title gets a clean background accent */
+#window {
+    color: #101010;
+    background-color: #aca1cf;
+    padding: 0 10px;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+    color: transparent;
+}
+
+window#waybar.empty {
+    background-color: #101010;
+}
+
+/* module text styling using the crisp bright text colors */
+#pulseaudio,
+#temperature {
+    color: #ffffff;
+    padding: 0 10px;
+}
+
+#clock {
+    color: #ffffff;
+    margin: 0 10px;
+}
+
+#tray {
+    padding: 0 8px 0 5px;
+    margin: 0 5px;
+}

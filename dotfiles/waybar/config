@@ -1,0 +1,52 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 14,
+  "modules-left": [
+    "niri/workspaces",
+    "niri/window"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "temperature",
+    "pulseaudio",
+    "clock",
+    "tray"
+  ],
+  "niri/workspaces": {
+    "disable-scroll": true,
+    "disable-markup": true,
+    "format": "{index}"
+  },
+  "niri/window": {
+    "format": "{}",
+    "max-length": 150
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 15
+  },
+  "clock": {
+    "format": "{:%a %b %e  %R}",
+    "interval": 30
+  },
+  "temperature": {
+    "thermal-zone": 0,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": [
+      ""
+    ],
+    "interval": 30
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%  ",
+    "format-bluetooth": "  {volume}%  ",
+    "format-muted": "婢  Mute  ",
+    "interval": 60,
+    "format-icons": {
+      "default": [
+        ""
+      ]
+    }
+  }
+}

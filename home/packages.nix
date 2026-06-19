@@ -4,6 +4,7 @@
     ayugram-desktop
     vesktop-wayland
     helium-wayland
+    waybar
 
     yazi
     awww
