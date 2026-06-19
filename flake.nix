@@ -17,13 +17,17 @@
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    yazi = {
+      url = "github:sxyazi/yazi";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
       self,
       nixpkgs,
-      nur,
       home-manager,
       ...
     }@inputs:
@@ -33,6 +37,7 @@
         config.allowUnfree = true;
         overlays = [
           inputs.nur.overlays.default
+          inputs.yazi.overlays.default
           (import ./packages)
         ];
       };
