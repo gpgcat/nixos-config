@@ -6,6 +6,7 @@
     helium-wayland
 
     yazi
+    awww
     fzf
     wl-clipboard
 
