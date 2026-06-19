@@ -28,7 +28,7 @@
       {
         key = "p";
         desc = "Pipemixer";
-        cmd = "${lib.getExe pkgs.pipemixer}";
+        cmd = "${lib.getExe pkgs.alacritty} -e ${lib.getExe pkgs.pipemixer}";
       }
       {
         key = "s";
