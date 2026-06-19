@@ -26,6 +26,11 @@
         cmd = "${lib.getExe pkgs.ayugram-desktop}";
       }
       {
+        key = "p";
+        desc = "Pipemixer";
+        cmd = "${lib.getExe pkgs.pipemixer}";
+      }
+      {
         key = "s";
         desc = "System";
         submenu = [
