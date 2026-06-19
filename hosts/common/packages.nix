@@ -9,6 +9,10 @@
     home-manager
   ];
 
+  fonts.packages = with pkgs; [
+    inter
+  ];
+
   programs = {
     niri.enable = true;
     fish.enable = true;

@@ -17,5 +17,26 @@
     "flakes"
   ];
 
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      sansSerif = [ "Inter" ];
+    };
+    localConf = ''
+      <?xml version="1.0"?>
+      <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+      <fontconfig>
+        <match target="pattern">
+          <test name="family" qual="any">
+            <string>DejaVu Sans</string>
+          </test>
+          <edit name="family" mode="assign" binding="same">
+            <string>Inter</string>
+          </edit>
+        </match>
+      </fontconfig>
+    '';
+  };
+
   system.stateVersion = "26.05";
 }
