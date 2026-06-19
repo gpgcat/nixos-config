@@ -9,6 +9,7 @@
     obs-studio
 
     yazi
+    xwayland-satellite
     gpu-screen-recorder
     wf-recorder
     awww
