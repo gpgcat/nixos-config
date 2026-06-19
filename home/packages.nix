@@ -7,6 +7,7 @@
     waybar
     wlr-which-key
     obs-studio
+    spotify
 
     yazi
     xwayland-satellite
