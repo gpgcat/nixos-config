@@ -10,6 +10,7 @@
     spotify
 
     yazi
+    onefetch
     xwayland-satellite
     gpu-screen-recorder
     wf-recorder
