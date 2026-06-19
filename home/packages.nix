@@ -10,6 +10,7 @@
     awww
     fzf
     wl-clipboard
+    libnotify
 
     nerd-fonts.jetbrains-mono
   ];
