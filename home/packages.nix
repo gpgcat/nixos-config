@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     ayugram-desktop
+    vesktop
     helium-wayland
 
     yazi
