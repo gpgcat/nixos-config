@@ -10,6 +10,7 @@
     yazi
     awww
     fzf
+    pipemixer
     wl-clipboard
     libnotify
 
