@@ -10,6 +10,7 @@
     spotify
 
     yazi
+    cliphist
     onefetch
     xwayland-satellite
     gpu-screen-recorder
