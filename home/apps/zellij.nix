@@ -1,4 +1,10 @@
 { ... }:
 {
-  programs.zellij.enable = true;
+  programs.zellij = {
+    enable = true;
+    settings = {
+      theme = "vesper";
+      default_layout = "compact";
+    };
+  };
 }
