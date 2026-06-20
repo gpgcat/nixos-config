@@ -44,23 +44,21 @@
 
       inherit (nixpkgs) lib;
 
-      commonModules =
-        if builtins.pathExists ./hosts/common then
-          builtins.filter (path: lib.hasSuffix ".nix" path) (lib.fileset.toList ./hosts/common)
+      getNixFiles =
+        dir:
+        if builtins.pathExists dir then
+          builtins.filter (path: lib.hasSuffix ".nix" path) (lib.fileset.toList dir)
         else
           [ ];
 
+      commonModules = getNixFiles ./hosts/common;
+
       makeNixosConfiguration =
         hostname:
-        let
-          hostModules = builtins.filter (path: lib.hasSuffix ".nix" path) (
-            lib.fileset.toList (./hosts + "/${hostname}")
-          );
-        in
         nixpkgs.lib.nixosSystem {
           inherit pkgs;
           specialArgs = { inherit inputs; };
-          modules = hostModules ++ commonModules;
+          modules = (getNixFiles (./hosts + "/${hostname}")) ++ commonModules;
         };
 
       hostDirs = nixpkgs.lib.filterAttrs (name: type: type == "directory" && name != "common") (
