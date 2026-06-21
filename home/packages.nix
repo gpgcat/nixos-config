@@ -13,6 +13,7 @@
     yazi
     cliphist
     onefetch
+    devenv
     xwayland-satellite
     gpu-screen-recorder
     wf-recorder
