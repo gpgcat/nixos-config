@@ -1,0 +1,9 @@
+keys:
+  - &madeline ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILR5/w+gVjwspJzU5qMRDqU4fGyH8iatsfYLgfoBm3Ix
+  - &azuki age1rgpmj46e4dz74a8nw0nps30y8e32welslaf255tza34ujgj4sepqzuqq84
+creation_rules:
+  - path_regex: secrets/azuki\.yaml$
+    key_groups:
+    - age:
+      - *madeline
+      - *azuki

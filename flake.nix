@@ -13,6 +13,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nvf = {
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -56,7 +61,10 @@
         hostname:
         nixpkgs.lib.nixosSystem {
           inherit pkgs;
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+            flakeRoot = ./.;
+          };
           modules = (getNixFiles (./hosts + "/${hostname}")) ++ commonModules;
         };
 
