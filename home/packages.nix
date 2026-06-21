@@ -8,6 +8,7 @@
     wlr-which-key
     obs-studio
     spotify
+    prismlauncher
 
     yazi
     cliphist
