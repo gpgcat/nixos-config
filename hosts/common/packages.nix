@@ -16,6 +16,7 @@
   programs = {
     niri.enable = true;
     fish.enable = true;
+    nix-ld.enable = true;
     direnv = {
       enable = true;
       nix-direnv.enable = true;
