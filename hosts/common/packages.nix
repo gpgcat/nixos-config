@@ -21,6 +21,13 @@
     direnv = {
       enable = true;
       nix-direnv.enable = true;
+
+      direnvrcExtra = ''
+        use_devenv() {
+          eval "$(devenv direnvrc)"
+          use devenv "$@"
+        }
+      '';
     };
   };
 }
