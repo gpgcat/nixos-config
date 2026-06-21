@@ -62,7 +62,7 @@
         nixpkgs.lib.nixosSystem {
           inherit pkgs;
           specialArgs = {
-            inherit inputs;
+            inherit inputs hostname;
             flakeRoot = ./.;
           };
           modules = (getNixFiles (./hosts + "/${hostname}")) ++ commonModules;

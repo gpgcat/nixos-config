@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, hostname, ... }:
 {
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -12,7 +12,10 @@
 
   hardware.graphics.enable = true;
 
-  networking.networkmanager.enable = true;
+  networking = {
+    networkmanager.enable = true;
+    networking.hostName = hostname;
+  };
 
   nix.settings.experimental-features = [
     "nix-command"
