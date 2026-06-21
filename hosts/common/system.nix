@@ -14,7 +14,7 @@
 
   networking = {
     networkmanager.enable = true;
-    networking.hostName = hostname;
+    hostName = hostname;
   };
 
   nix.settings.experimental-features = [
