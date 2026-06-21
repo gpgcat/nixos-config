@@ -17,6 +17,7 @@
     niri.enable = true;
     fish.enable = true;
     nix-ld.enable = true;
+    steam.enable = true;
     direnv = {
       enable = true;
       nix-direnv.enable = true;
