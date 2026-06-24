@@ -7,7 +7,10 @@
     age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
     secrets = {
-      placeholder = { }; # nothing to store yet lol
+      singbox_ip = { };
+      singbox_uuid = { };
+      singbox_pubkey = { };
+      singbox_shortid = { };
     };
   };
 }
