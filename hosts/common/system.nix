@@ -1,4 +1,9 @@
-{ pkgs, hostname, ... }:
+{
+  pkgs,
+  hostname,
+  lib,
+  ...
+}:
 {
   boot = {
     loader = {
@@ -8,6 +13,27 @@
         enable = true;
         enableEditor = true;
         maxGenerations = 10;
+
+        style = {
+          wallpapers = lib.mkForce [ ];
+          interface = {
+            branding = "nixos uwu";
+            brandingColor = "aca1cf";
+            helpHidden = true;
+          };
+          graphicalTerminal = {
+            font.scale = "1x1";
+
+            background = "000000";
+            foreground = "ffffff";
+
+            brightBackground = "000000";
+            brightForeground = "ffffff";
+
+            palette = "000000;f5a191;90b99f;e6b99d;aca1cf;e29eca;ea83a5;a0a0a0";
+            brightPalette = "7e7e7e;ff8080;99ffe4;ffc799;b9aeda;ecaad6;f591b2;ffffff";
+          };
+        };
       };
     };
 
